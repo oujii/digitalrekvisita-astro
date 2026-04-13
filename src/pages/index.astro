@@ -1,0 +1,762 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "The Pirate Bay",
+    meta: "2024 / SVT / B-reel Films",
+    description:
+      "Omfattande interaktiv grafik till datorer och design av digitala miljöer i 00-talsanda",
+    image: "68dbe36f523a845132df8d5d_Screenshot 2025-09-30 at 16.03.04.avif",
+    videoMp4: "67acbb8c449467e4aa72ae77_gottoutput-transcode.mp4",
+    videoWebm: "67acbb8c449467e4aa72ae77_gottoutput-transcode.webm",
+    videoPoster: "67acbb8c449467e4aa72ae77_gottoutput-poster-00001.jpg",
+  },
+  {
+    title: "Hundarna",
+    meta: "2026 / SVT / Strive Stories",
+    description:
+      "Interaktiv datorgrafik som Google-sökning, nyhetsartiklar, flashback-trådar m.m, samt framställning av fiktiva bilder.",
+    image: "69dd3353a011f4e903471d6a_1769768655.avif",
+    videoMp4: "69dd32985788233c1eb3dbcc_IMG_3468_mp4.mp4",
+    videoWebm: "69dd32985788233c1eb3dbcc_IMG_3468_webm.webm",
+    videoPoster: "69dd32985788233c1eb3dbcc_IMG_3468_poster.0000000.jpg",
+  },
+  {
+    title: "Vaka",
+    meta: "2026 / Prime Video / Unlimited Stories",
+    description: "Design och programmering av fiktiv sociala medier-app",
+    image:
+      "69dd335470798c73f7b2acdc_261b7c96de51fe00a3af4dd33a635293dc5daafb4ae50f27e6b6357ebe48d4a0.avif",
+  },
+  {
+    title: "Limbo",
+    meta: "2023 / Viaplay / Warner Bros",
+    description:
+      "Lån-applikation och diverse flöden för iOS samt skyltning och grafisk profil till fiktivt sjukhus",
+    image: "63c42389a9dabe48df44a643_limbo.jpg",
+    videoMp4: "68dc09157af91fa791539700_limbo-egen(1)-transcode.mp4",
+    videoWebm: "68dc09157af91fa791539700_limbo-egen(1)-transcode.webm",
+    videoPoster: "68dc09157af91fa791539700_limbo-egen(1)-poster-00001.jpg",
+  },
+  {
+    title: "Taelgia",
+    meta: "2023 / SVT / Filmlance",
+    description:
+      "Interaktiva flöden till iOS samt skyltning och originalframställning till fiktivt polishus",
+    image:
+      "65cca66d7539eb593abf9726_Screenshot 2024-02-12 at 15.05.05.webp",
+    videoMp4: "68dc07359e22b14d39d2ad47_taelgia-egen-transcode.mp4",
+    videoWebm: "68dc07359e22b14d39d2ad47_taelgia-egen-transcode.webm",
+    videoPoster: "68dc07359e22b14d39d2ad47_taelgia-egen-poster-00001.jpg",
+  },
+  {
+    title: "The Conference",
+    meta: "2023 / Netflix / SF Studios",
+    description:
+      "Interaktiv grafik till Android smartphone och Chromebook, design av fiktivt mejlprogram",
+    image: "68dbe3c32f031c259353002a_Screenshot 2025-09-30 at 15.07.16.avif",
+  },
+  {
+    title: "Heder",
+    meta: "2019 / Viaplay / Bigster",
+    description: "Interaktiv fejkapp till Android",
+    image: "63b99f62e91f660436258f92_1.jpg",
+    videoMp4: "63c4207a0d5e92fda2f49626_heder-low1-transcode.mp4",
+    videoWebm: "63c4207a0d5e92fda2f49626_heder-low1-transcode.webm",
+    videoPoster: "63c4207a0d5e92fda2f49626_heder-low1-poster-00001.jpg",
+  },
+  {
+    title: "Jönssonligan & Wall Enberg",
+    meta: "Premiär 2026 / SF Studios",
+    description: "Digital rekvisita till kommande långfilm",
+    image: "68dc30b05227b898da059f04_IMG_1504.avif",
+  },
+  {
+    title: "The Case",
+    meta: "Premiär 2026 / Netflix / B-reel Films",
+    description: "Digital rekvisita till kommande thrillerserie",
+    image: "68dc30d12f5adb4dba28ccfd_IMG_1502.avif",
+  },
+  {
+    title: "Bytet",
+    meta: "Premiär 2026 / Netflix",
+    description: "Digital rekvisita till kommande thrillerserie",
+    image: "69dd35a79f365391877c1f14_2025_12_bytet-netflixserie-nyhet.avif",
+  },
+];
+
+const logos = [
+  { src: "63b9a439f28c503eec3d2e39_Netflix_2015_logo.png", alt: "Netflix" },
+  { src: "63b9a459e91f6676ef25f380_Warner_Bros_logo.png", alt: "Warner Bros" },
+  { src: "672e0bda86d71020d5d5e986_svt.png", alt: "SVT" },
+  {
+    src: "63becb962e2647e3e7f4e707_footer_logo_160x180 1(1).png",
+    alt: "Viaplay",
+  },
+  { src: "63b9a488e3ca2a5ecfd1e238_SFS_logo_primary_v_red 1.png", alt: "SF Studios" },
+  { src: "672e0bb57755ad7d24a3b24b_brf-logotype_01_white.png", alt: "B-Reel Films" },
+  {
+    src: "68dc21445f0aa6e0041b7462_prime-video-horizontal-logo-white-dec-2024.png",
+    alt: "Prime Video",
+  },
+  {
+    src: "63b9a48846576d2b13a016e3_Banijay_Filmlance_Logo_WaB_RGB_Final-700x137.png",
+    alt: "Banijay Filmlance",
+  },
+  {
+    src: "68dc215d96216c72d9476079_UNLTD_-_Unlimited_Stories_(Color).svg",
+    alt: "Unlimited Stories",
+  },
+  { src: "63b9a48846576d4060a016e2_ladda+ned 1.png", alt: "Strive" },
+];
+---
+
+<Layout
+  title="Digital rekvisita för film och TV"
+  description="Interaktiv digital design och grafiska lösningar för TV och filmproduktioner. Vi skräddarsyr fiktiva gränssnitt för alla typer av skärmar och enheter."
+>
+  <main>
+    <!-- Nav -->
+    <nav id="start">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img
+            src="/images/68dc26a8c975bbe237511944_digitalrekvisita_logo.svg"
+            alt="Digitalrekvisita"
+          />
+        </a>
+        <button class="nav-toggle" aria-label="Meny" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#tjanster">Tjänster</a>
+          <a href="#om">Om oss</a>
+          <a href="#om">Kontakt</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/672e02bcb1f35afa9ce8b9a1_digitalrekvisita_crop-poster-00001.jpg"
+      >
+        <source
+          src="/videos/672e02bcb1f35afa9ce8b9a1_digitalrekvisita_crop-transcode.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="/videos/672e02bcb1f35afa9ce8b9a1_digitalrekvisita_crop-transcode.webm"
+          type="video/webm"
+        />
+      </video>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-left">
+            <h2>Vi skräddarsyr fiktiva gränssnitt för alla typer av skärmar och enheter</h2>
+          </div>
+          <div class="intro-right">
+            <p>
+              Med fokus på <strong>interaktiv</strong> digital design levererar
+              vi trovärdiga grafiska lösningar för TV och filmproduktioner. Vi
+              ger er full kontroll över digitala sekvenser som ska visas i bild.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects">
+      <div class="container">
+        <div class="projects-grid">
+          {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="tjanster">
+      <div class="container">
+        <div class="services-grid">
+          <div class="services-left">
+            <h2>Våra tjänster</h2>
+          </div>
+          <div class="services-right">
+            <div class="service-group">
+              <div class="service-icon">
+                <img
+                  src="/images/63c43b67cff8186460064543_icon_digital.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Digital rekvisita</h3>
+                <ul>
+                  <li>Interaktiva flöden för smartphones och datorer</li>
+                  <li>Tidsbestämda utlösare (t.ex. inkommande SMS)</li>
+                  <li>Fejkappar och hemsidor</li>
+                  <li>Rörlig grafik</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-group">
+              <div class="service-icon">
+                <img
+                  src="/images/63c43b5c1c217847b6c73d01_icon_grafisk.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Grafisk rekvisita</h3>
+                <ul>
+                  <li>Helhetslösningar inom grafisk design</li>
+                  <li>Logotyper</li>
+                  <li>Skyltning och originalframställning</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-group">
+              <div class="service-icon">
+                <img
+                  src="/images/63c43b45ee0d0f2859b941e1_icon_kreativ.png"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Fysisk rekvisita & kreativa lösningar</h3>
+                <p class="service-note">
+                  Vi samarbetar med <a
+                    href="https://www.toolspace.se/"
+                    target="_blank"
+                    rel="noopener">Toolspace AB</a
+                  > och har därmed också kompetens och möjligheter att tillverka
+                  fysisk rekvisita!
+                </p>
+                <ul>
+                  <li>Tillgång till 3D-printers & 3D scanning</li>
+                  <li>Verkstäder: trä, metall, textil</li>
+                  <li>Laserskärare och CNC maskiner</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="logos" id="kunder">
+      <div class="container">
+        <div class="logos-grid">
+          {
+            logos.map((logo) => (
+              <img
+                src={`/images/${logo.src}`}
+                alt={logo.alt}
+                class="logo-img"
+                loading="lazy"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="om">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left">
+            <h2>Om oss</h2>
+            <p>
+              Vi har över 10 års erfarenhet inom grafisk design och
+              interaktionsdesign. De senaste åren har vi nischat oss på
+              interaktiv digital rekvisita och tagit oss an en mängd roliga
+              uppdrag inom filmindustrin. Vi har alltid personlig kundkontakt,
+              en förståelse för drama och ett öga för detalj. Tveka inte att
+              höra av er!
+            </p>
+            <p class="instagram-note">
+              Följ oss gärna på Instagram: <a
+                href="https://www.instagram.com/digitalrekvisita"
+                target="_blank"
+                rel="noopener">@digitalrekvisita</a
+              >
+            </p>
+          </div>
+          <div class="about-right">
+            <div class="team-member">
+              <img
+                src="/images/68dc463d868ab229f5e0d63c_carl_bw_Ny.avif"
+                alt="Carl Waerner"
+                loading="lazy"
+              />
+              <div class="member-info">
+                <strong>Carl Waerner</strong>
+                <span>carl.waerner@gmail.com</span>
+                <a href="tel:+46708276741">070-827 67 41</a>
+              </div>
+            </div>
+            <div class="team-member">
+              <img
+                src="/images/68dc1d5fcc32f7856dfef49b_frida_bw.avif"
+                alt="Frida Häggström Gerdt"
+                loading="lazy"
+              />
+              <div class="member-info">
+                <strong>Frida Häggström Gerdt</strong>
+                <span>frida.haggstrom@gmail.com</span>
+                <a href="tel:+46762566882">076-256 68 82</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-inner">
+        <img
+          src="/images/68dc26a8c975bbe237511944_digitalrekvisita_logo.svg"
+          alt="Digitalrekvisita"
+          class="footer-logo"
+        />
+        <a href="#start" class="to-top">Till toppen</a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    transition: background 0.3s;
+  }
+
+  nav.scrolled {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo img {
+    height: 24px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-family: "Inconsolata", monospace;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #05ff00;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Intro */
+  .intro {
+    padding: 6rem 0;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .intro-left h2 {
+    font-family: "Inconsolata", monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .intro-right p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+  }
+
+  .intro-right strong {
+    color: #05ff00;
+    font-weight: 500;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 0 0 4rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* Services */
+  .services {
+    padding: 6rem 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+
+  .services-left h2 {
+    font-family: "Inconsolata", monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .services-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .service-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .service-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+  }
+
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .service-group h3 {
+    font-family: "Inconsolata", monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-group ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+  }
+
+  .service-group li {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.35rem;
+  }
+
+  .service-note {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-note a {
+    color: #05ff00;
+    text-decoration: underline;
+  }
+
+  /* Logos */
+  .logos {
+    padding: 4rem 0;
+  }
+
+  .logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem 3rem;
+  }
+
+  .logo-img {
+    height: 40px;
+    width: auto;
+    opacity: 0.7;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s;
+  }
+
+  .logo-img:hover {
+    opacity: 1;
+  }
+
+  /* About */
+  .about {
+    padding: 6rem 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .about-left h2 {
+    font-family: "Inconsolata", monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-left p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .instagram-note a {
+    color: #05ff00;
+  }
+
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-member img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .member-info strong {
+    font-family: "Inconsolata", monospace;
+    font-weight: 700;
+  }
+
+  .member-info span,
+  .member-info a {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .member-info a:hover {
+    color: #05ff00;
+  }
+
+  /* Footer */
+  footer {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    height: 20px;
+    width: auto;
+    opacity: 0.6;
+  }
+
+  .to-top {
+    font-family: "Inconsolata", monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s;
+  }
+
+  .to-top:hover {
+    color: #05ff00;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.98);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 99;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links a {
+      font-size: 1.5rem;
+    }
+
+    .nav-toggle {
+      display: flex;
+      z-index: 101;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .intro-grid,
+    .services-grid,
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intro-left h2 {
+      font-size: 1.5rem;
+    }
+
+    .hero {
+      height: 60vh;
+    }
+  }
+</style>
+
+<script>
+  // Nav scroll effect
+  const nav = document.querySelector("nav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add("scrolled");
+    } else {
+      nav?.classList.remove("scrolled");
+    }
+  });
+
+  // Mobile menu toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector(".nav-links");
+  toggle?.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    toggle.setAttribute(
+      "aria-expanded",
+      toggle.classList.contains("open").toString()
+    );
+    links?.classList.toggle("open");
+  });
+
+  // Close menu on link click
+  links?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      toggle?.classList.remove("open");
+      links?.classList.remove("open");
+    });
+  });
+</script>
