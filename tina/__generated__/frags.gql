@@ -1,0 +1,41 @@
+fragment ProjectsParts on Projects {
+  __typename
+  projects {
+    __typename
+    title
+    meta
+    description
+    image
+    blurThumbnail
+    videoMp4
+    videoWebm
+    videoPoster
+  }
+}
+
+fragment PageParts on Page {
+  __typename
+  heroTitle
+  heroBody
+  aboutTitle
+  aboutBody
+  instagramHandle
+  teamMembers {
+    __typename
+    name
+    email
+    phone
+    phoneHref
+    image
+  }
+}
+
+fragment LogosParts on Logos {
+  __typename
+  logos {
+    __typename
+    name
+    image
+    height
+  }
+}
