@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# migration scripts (contain API tokens)
+scripts/
+
 # macOS-specific files
 .DS_Store
 

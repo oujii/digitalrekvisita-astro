@@ -4,22 +4,23 @@ interface Props {
   meta: string;
   description: string;
   image: string;
+  blurThumbnail?: boolean;
   videoMp4?: string;
   videoWebm?: string;
   videoPoster?: string;
 }
 
-const { title, meta, description, image, videoMp4, videoWebm, videoPoster } = Astro.props;
+const { title, meta, description, image, blurThumbnail, videoMp4, videoWebm, videoPoster } = Astro.props;
 const hasVideo = !!videoMp4;
 ---
 
 <div class="project-card" data-has-video={hasVideo ? "true" : undefined}>
   <div class="card-media">
     <img
-      src={`/images/${image}`}
+      src={image}
       alt={title}
       loading="lazy"
-      class="card-image"
+      class:list={["card-image", { "card-image-blur": blurThumbnail }]}
     />
     {hasVideo && (
       <video
@@ -28,10 +29,10 @@ const hasVideo = !!videoMp4;
         loop
         playsinline
         preload="none"
-        poster={videoPoster ? `/images/${videoPoster}` : undefined}
+        poster={videoPoster || undefined}
       >
-        <source src={`/videos/${videoMp4}`} type="video/mp4" />
-        {videoWebm && <source src={`/videos/${videoWebm}`} type="video/webm" />}
+        <source src={videoMp4} type="video/mp4" />
+        {videoWebm && <source src={videoWebm} type="video/webm" />}
       </video>
     )}
     <div class="card-overlay"></div>
@@ -50,8 +51,6 @@ const hasVideo = !!videoMp4;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 4px;
-    background: #111;
   }
 
   .card-media {
@@ -65,6 +64,11 @@ const hasVideo = !!videoMp4;
     height: 100%;
     object-fit: cover;
     transition: opacity 0.4s ease;
+  }
+
+  .card-image-blur {
+    filter: blur(20px);
+    transform: scale(1.05);
   }
 
   .card-video {
@@ -111,24 +115,21 @@ const hasVideo = !!videoMp4;
   }
 
   .card-name {
-    font-family: "Inconsolata", monospace;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .card-meta {
-    font-family: "Inconsolata", monospace;
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     color: #05ff00;
   }
 
+  .card-meta {
+    font-size: 16px;
+    font-weight: 100;
+    color: #fff;
+  }
+
   .card-description {
-    font-family: "Roboto", sans-serif;
-    font-size: 0.85rem;
+    font-size: 16px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
+    color: #f4f4f4;
     line-height: 1.5;
   }
 </style>
