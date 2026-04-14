@@ -59,7 +59,7 @@ const teamMembers = page.teamMembers;
               title={project.title}
               meta={project.meta}
               description={project.description}
-              image={`/images/${project.image}`}
+              image={`/${project.image}`}
               blurThumbnail={project.blurThumbnail}
               videoMp4={project.videoMp4 ? `/videos/${project.videoMp4}` : undefined}
               videoWebm={project.videoWebm ? `/videos/${project.videoWebm}` : undefined}
@@ -516,6 +516,18 @@ const teamMembers = page.teamMembers;
 
     .projects-grid {
       grid-template-columns: 1fr;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .nav-inner {
+      padding: 0 16px;
+    }
+
+    .logos {
+      padding: 64px 16px 96px;
     }
   }
 </style>
