@@ -92,11 +92,13 @@ const hasVideo = !!videoMp4;
     background: rgba(0, 0, 0, 0.15);
   }
 
-  .project-card:hover .card-video {
+  .project-card:hover .card-video,
+  .project-card.mobile-playing .card-video {
     opacity: 1;
   }
 
-  .project-card:hover .card-image {
+  .project-card:hover .card-image,
+  .project-card.mobile-playing .card-image {
     opacity: 0;
   }
 
@@ -141,14 +143,15 @@ const hasVideo = !!videoMp4;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!isMobile()) return;
-      const card = entry.target;
+      const card = entry.target as HTMLElement;
       const video = card.querySelector('video') as HTMLVideoElement | null;
       if (!video) return;
       if (entry.isIntersecting) {
-        video.currentTime = 0;
         video.play().catch(() => {});
+        card.classList.add('mobile-playing');
       } else {
         video.pause();
+        card.classList.remove('mobile-playing');
       }
     });
   }, { threshold: 0.5 });
