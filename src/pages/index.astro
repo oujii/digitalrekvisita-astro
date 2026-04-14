@@ -61,9 +61,9 @@ const teamMembers = page.teamMembers;
               description={project.description}
               image={`/${project.image}`}
               blurThumbnail={project.blurThumbnail}
-              videoMp4={project.videoMp4 ? `/videos/${project.videoMp4}` : undefined}
-              videoWebm={project.videoWebm ? `/videos/${project.videoWebm}` : undefined}
-              videoPoster={project.videoPoster ? `/images/${project.videoPoster}` : undefined}
+              videoMp4={project.videoMp4 ? `/${project.videoMp4}` : undefined}
+              videoWebm={project.videoWebm ? `/${project.videoWebm}` : undefined}
+              videoPoster={project.videoPoster ? `/${project.videoPoster}` : undefined}
             />
           ))}
         </div>

@@ -12,7 +12,7 @@ export default defineConfig({
 
   media: {
     tina: {
-      mediaRoot: "images",
+      mediaRoot: "",
       publicFolder: "public",
     },
   },
@@ -72,20 +72,17 @@ export default defineConfig({
               {
                 name: "videoMp4",
                 label: "Video MP4",
-                type: "string",
-                description: "Filnamn på videon i /public/videos/, t.ex. myvideo.mp4. Videos laddas upp manuellt till repot pga filstorlek.",
+                type: "image",
               },
               {
                 name: "videoWebm",
                 label: "Video WebM",
-                type: "string",
-                description: "Filnamn på WebM-versionen av videon i /public/videos/",
+                type: "image",
               },
               {
                 name: "videoPoster",
                 label: "Video poster (stillbild)",
-                type: "string",
-                description: "Filnamn på posterbilden i /public/images/",
+                type: "image",
               },
             ],
           },
