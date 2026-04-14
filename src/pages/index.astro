@@ -25,11 +25,6 @@ const teamMembers = page.teamMembers;
             alt="Digitalrekvisita"
           />
         </a>
-        <button class="nav-toggle" aria-label="Meny" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
         <div class="nav-links">
           <a href="#om">Kontakt</a>
         </div>
@@ -462,41 +457,16 @@ const teamMembers = page.teamMembers;
 
   /* Mobile */
   @media (max-width: 768px) {
-    .nav-links {
+    .nav-toggle {
       display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(22, 22, 22, 0.98);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      z-index: 99;
     }
 
-    .nav-links.open {
+    .nav-links {
       display: flex;
     }
 
     .nav-links a {
-      font-size: 1.5rem;
-    }
-
-    .nav-toggle {
-      display: flex;
-      z-index: 101;
-    }
-
-    .nav-toggle.open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .nav-toggle.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .nav-toggle.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      font-size: 16px;
     }
 
     .hero-grid,
@@ -512,6 +482,17 @@ const teamMembers = page.teamMembers;
 
     .hero-left h1 {
       font-size: 42px;
+    }
+
+    .hero-right p {
+      font-size: 16.6px;
+      line-height: 1.6;
+    }
+
+    .about-left p,
+    .member-info {
+      font-size: 16.6px;
+      line-height: 1.6;
     }
 
     .projects-grid {
@@ -545,26 +526,6 @@ const teamMembers = page.teamMembers;
     } else {
       nav?.classList.remove("scrolled");
     }
-  });
-
-  // Mobile menu toggle
-  const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
-  toggle?.addEventListener("click", () => {
-    toggle.classList.toggle("open");
-    toggle.setAttribute(
-      "aria-expanded",
-      toggle.classList.contains("open").toString()
-    );
-    links?.classList.toggle("open");
-  });
-
-  // Close menu on link click
-  links?.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      toggle?.classList.remove("open");
-      links?.classList.remove("open");
-    });
   });
 
   // Smooth scroll to top

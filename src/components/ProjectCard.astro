@@ -135,21 +135,46 @@ const hasVideo = !!videoMp4;
 </style>
 
 <script>
+  const isMobile = () => window.matchMedia('(hover: none)').matches;
+
+  // IntersectionObserver for mobile scroll-to-play
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!isMobile()) return;
+      const card = entry.target;
+      const video = card.querySelector('video') as HTMLVideoElement | null;
+      if (!video) return;
+      if (entry.isIntersecting) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
   document.querySelectorAll('.project-card[data-has-video]').forEach((card) => {
     const video = card.querySelector('video') as HTMLVideoElement | null;
     if (!video) return;
 
+    // Desktop: hover to play
     card.addEventListener('mouseenter', () => {
+      if (isMobile()) return;
       video.currentTime = 0;
       video.play().catch(() => {});
     });
 
     card.addEventListener('mouseleave', () => {
+      if (isMobile()) return;
       video.pause();
     });
 
-    // Mobile: tap to play/pause
+    // Register for scroll-based play on mobile
+    observer.observe(card);
+
+    // Mobile: tap to play/pause (fallback)
     card.addEventListener('click', () => {
+      if (!isMobile()) return;
       if (video.paused) {
         video.currentTime = 0;
         video.play().catch(() => {});
