@@ -41,9 +41,9 @@ export interface DatoProject {
   description: string;
   thumbnail: DatoImage;
   blurThumbnail: boolean;
-  videoMp4: DatoFile | null;
-  videoWebm: DatoFile | null;
-  videoPoster: DatoImage | null;
+  videoMp4: string | null;
+  videoWebm: string | null;
+  videoPoster: string | null;
 }
 
 export interface DatoPage {

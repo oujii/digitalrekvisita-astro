@@ -16,9 +16,9 @@ const data = await fetchDato<{
     description
     thumbnail { url alt width height }
     blurThumbnail
-    videoMp4 { url }
-    videoWebm { url }
-    videoPoster { url alt width height }
+    videoMp4
+    videoWebm
+    videoPoster
   }
   page {
     heroTitle
@@ -100,9 +100,9 @@ const teamMembers = (
               description={project.description}
               image={project.thumbnail.url}
               blurThumbnail={project.blurThumbnail}
-              videoMp4={project.videoMp4?.url}
-              videoWebm={project.videoWebm?.url}
-              videoPoster={project.videoPoster?.url}
+              videoMp4={project.videoMp4 ? `/videos/${project.videoMp4}` : undefined}
+              videoWebm={project.videoWebm ? `/videos/${project.videoWebm}` : undefined}
+              videoPoster={project.videoPoster ? `/images/${project.videoPoster}` : undefined}
             />
           ))}
         </div>
