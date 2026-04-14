@@ -246,9 +246,9 @@ export type ProjectsProjectsFilter = {
   description?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
   blurThumbnail?: InputMaybe<BooleanFilter>;
-  videoMp4?: InputMaybe<StringFilter>;
-  videoWebm?: InputMaybe<StringFilter>;
-  videoPoster?: InputMaybe<StringFilter>;
+  videoMp4?: InputMaybe<ImageFilter>;
+  videoWebm?: InputMaybe<ImageFilter>;
+  videoPoster?: InputMaybe<ImageFilter>;
 };
 
 export type ProjectsFilter = {

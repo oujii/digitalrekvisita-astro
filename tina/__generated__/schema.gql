@@ -136,9 +136,9 @@ input ProjectsProjectsFilter {
   description: StringFilter
   image: ImageFilter
   blurThumbnail: BooleanFilter
-  videoMp4: StringFilter
-  videoWebm: StringFilter
-  videoPoster: StringFilter
+  videoMp4: ImageFilter
+  videoWebm: ImageFilter
+  videoPoster: ImageFilter
 }
 
 input ProjectsFilter {

@@ -10,7 +10,7 @@ var config_default = defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "images",
+      mediaRoot: "",
       publicFolder: "public"
     }
   },
@@ -68,19 +68,18 @@ var config_default = defineConfig({
               },
               {
                 name: "videoMp4",
-                label: "Video MP4 (filnamn i /public/videos/)",
-                type: "string",
-                description: "T.ex. myvideo.mp4"
+                label: "Video MP4",
+                type: "image"
               },
               {
                 name: "videoWebm",
-                label: "Video WebM (filnamn i /public/videos/)",
-                type: "string"
+                label: "Video WebM",
+                type: "image"
               },
               {
                 name: "videoPoster",
-                label: "Video poster (filnamn i /public/images/)",
-                type: "string"
+                label: "Video poster (stillbild)",
+                type: "image"
               }
             ]
           }
