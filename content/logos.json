@@ -1,0 +1,14 @@
+{
+  "logos": [
+    { "name": "Netflix", "image": "63b9a439f28c503eec3d2e39_Netflix_2015_logo.png", "height": 36 },
+    { "name": "Warner Bros", "image": "63b9a459e91f6676ef25f380_Warner_Bros_logo.png", "height": 64 },
+    { "name": "SVT", "image": "672e0bda86d71020d5d5e986_svt.png", "height": 44 },
+    { "name": "Viaplay", "image": "63becb962e2647e3e7f4e707_footer_logo_160x180 1(1).png", "height": 68 },
+    { "name": "SF Studios", "image": "63b9a488e3ca2a5ecfd1e238_SFS_logo_primary_v_red 1.png", "height": 76 },
+    { "name": "B-Reel Films", "image": "672e0bb57755ad7d24a3b24b_brf-logotype_01_white.png", "height": 33 },
+    { "name": "Prime Video", "image": "68dc21445f0aa6e0041b7462_prime-video-horizontal-logo-white-dec-2024.png", "height": 36 },
+    { "name": "Banijay Filmlance", "image": "63b9a48846576d2b13a016e3_Banijay_Filmlance_Logo_WaB_RGB_Final-700x137.png", "height": 36 },
+    { "name": "Unlimited Stories", "image": "68dc215d96216c72d9476079_UNLTD_-_Unlimited_Stories_(Color).svg", "height": 36 },
+    { "name": "Bigster", "image": "63b9a48846576d4060a016e2_ladda+ned 1.png", "height": 36 }
+  ]
+}

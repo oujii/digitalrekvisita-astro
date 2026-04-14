@@ -1,0 +1,23 @@
+{
+  "heroTitle": "Vi skräddarsyr fiktiva gränssnitt för alla typer av skärmar och enheter",
+  "heroBody": "Med fokus på <strong>interaktiv</strong> digital design levererar vi trovärdiga grafiska lösningar för TV och filmproduktioner. Vi ger er full kontroll över digitala sekvenser som ska visas i bild.",
+  "aboutTitle": "Om oss",
+  "aboutBody": "Vi har över 10 års erfarenhet inom grafisk design och interaktionsdesign. De senaste åren har vi nischat oss på interaktiv digital rekvisita och tagit oss an en mängd roliga uppdrag inom filmindustrin. Vi har alltid personlig kundkontakt, en förståelse för drama och ett öga för detalj. Tveka inte att höra av er!",
+  "instagramHandle": "@digitalrekvisita",
+  "teamMembers": [
+    {
+      "name": "Carl Waerner",
+      "email": "carl.waerner@gmail.com",
+      "phone": "070-827 67 41",
+      "phoneHref": "+46708276741",
+      "image": "68dc463d868ab229f5e0d63c_carl_bw_Ny.avif"
+    },
+    {
+      "name": "Frida Häggström Gerdt",
+      "email": "frida.haggstrom@gmail.com",
+      "phone": "076-256 68 82",
+      "phoneHref": "+46762566882",
+      "image": "68dc1d5fcc32f7856dfef49b_frida_bw.avif"
+    }
+  ]
+}

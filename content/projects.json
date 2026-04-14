@@ -1,0 +1,89 @@
+{
+  "projects": [
+    {
+      "title": "The Pirate Bay",
+      "meta": "2024 / SVT / B-reel Films",
+      "description": "Omfattande interaktiv grafik till datorer och design av digitala miljöer i 00-talsanda",
+      "image": "68dbe36f523a845132df8d5d_Screenshot 2025-09-30 at 16.03.04.avif",
+      "blurThumbnail": false,
+      "videoMp4": "67acbb8c449467e4aa72ae77_gottoutput-transcode.mp4",
+      "videoWebm": "67acbb8c449467e4aa72ae77_gottoutput-transcode.webm",
+      "videoPoster": "67acbb8c449467e4aa72ae77_gottoutput-poster-00001.jpg"
+    },
+    {
+      "title": "Hundarna",
+      "meta": "2026 / SVT / Strive Stories",
+      "description": "Interaktiv datorgrafik som Google-sökning, nyhetsartiklar, flashback-trådar m.m, samt framställning av fiktiva bilder.",
+      "image": "69dd3353a011f4e903471d6a_1769768655.avif",
+      "blurThumbnail": false,
+      "videoMp4": "69dd32985788233c1eb3dbcc_IMG_3468_mp4.mp4",
+      "videoWebm": "69dd32985788233c1eb3dbcc_IMG_3468_webm.webm",
+      "videoPoster": "69dd32985788233c1eb3dbcc_IMG_3468_poster.0000000.jpg"
+    },
+    {
+      "title": "Vaka",
+      "meta": "2026 / Prime Video / Unlimited Stories",
+      "description": "Design och programmering av fiktiv sociala medier-app",
+      "image": "69dd335470798c73f7b2acdc_261b7c96de51fe00a3af4dd33a635293dc5daafb4ae50f27e6b6357ebe48d4a0.avif",
+      "blurThumbnail": false
+    },
+    {
+      "title": "Limbo",
+      "meta": "2023 / Viaplay / Warner Bros",
+      "description": "Lån-applikation och diverse flöden för iOS samt skyltning och grafisk profil till fiktivt sjukhus",
+      "image": "63c42389a9dabe48df44a643_limbo.jpg",
+      "blurThumbnail": false,
+      "videoMp4": "68dc09157af91fa791539700_limbo-egen(1)-transcode.mp4",
+      "videoWebm": "68dc09157af91fa791539700_limbo-egen(1)-transcode.webm",
+      "videoPoster": "68dc09157af91fa791539700_limbo-egen(1)-poster-00001.jpg"
+    },
+    {
+      "title": "Taelgia",
+      "meta": "2023 / SVT / Filmlance",
+      "description": "Interaktiva flöden till iOS samt skyltning och originalframställning till fiktivt polishus",
+      "image": "65cca66d7539eb593abf9726_Screenshot 2024-02-12 at 15.05.05.webp",
+      "blurThumbnail": false,
+      "videoMp4": "68dc07359e22b14d39d2ad47_taelgia-egen-transcode.mp4",
+      "videoWebm": "68dc07359e22b14d39d2ad47_taelgia-egen-transcode.webm",
+      "videoPoster": "68dc07359e22b14d39d2ad47_taelgia-egen-poster-00001.jpg"
+    },
+    {
+      "title": "The Conference",
+      "meta": "2023 / Netflix / SF Studios",
+      "description": "Interaktiv grafik till Android smartphone och Chromebook, design av fiktivt mejlprogram",
+      "image": "68dbe3c32f031c259353002a_Screenshot 2025-09-30 at 15.07.16.avif",
+      "blurThumbnail": false
+    },
+    {
+      "title": "Heder",
+      "meta": "2019 / Viaplay / Bigster",
+      "description": "Interaktiv fejkapp till Android",
+      "image": "63b99f62e91f660436258f92_1.jpg",
+      "blurThumbnail": false,
+      "videoMp4": "63c4207a0d5e92fda2f49626_heder-low1-transcode.mp4",
+      "videoWebm": "63c4207a0d5e92fda2f49626_heder-low1-transcode.webm",
+      "videoPoster": "63c4207a0d5e92fda2f49626_heder-low1-poster-00001.jpg"
+    },
+    {
+      "title": "Jönssonligan & Wall Enberg",
+      "meta": "Premiär 2026 / SF Studios",
+      "description": "Digital rekvisita till kommande långfilm",
+      "image": "68dc30b05227b898da059f04_IMG_1504.avif",
+      "blurThumbnail": false
+    },
+    {
+      "title": "The Case",
+      "meta": "Premiär 2026 / Netflix / B-reel Films",
+      "description": "Digital rekvisita till kommande thrillerserie",
+      "image": "68dc30d12f5adb4dba28ccfd_IMG_1502.avif",
+      "blurThumbnail": false
+    },
+    {
+      "title": "Bytet",
+      "meta": "Premiär 2026 / Netflix",
+      "description": "Digital rekvisita till kommande thrillerserie",
+      "image": "69dd35a79f365391877c1f14_2025_12_bytet-netflixserie-nyhet.avif",
+      "blurThumbnail": false
+    }
+  ]
+}

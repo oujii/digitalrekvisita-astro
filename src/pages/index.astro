@@ -1,53 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { fetchDato } from "../lib/datocms";
-import type { DatoProject, DatoPage, DatoLogo } from "../lib/datocms";
+import projectsData from "../../content/projects.json";
+import pageData from "../../content/page.json";
+import logosData from "../../content/logos.json";
 
-const data = await fetchDato<{
-  allProjects: DatoProject[];
-  page: DatoPage;
-  allLogos: DatoLogo[];
-}>(`{
-  allProjects(orderBy: position_ASC) {
-    id
-    title
-    projectMeta
-    description
-    thumbnail { url alt width height }
-    blurThumbnail
-    videoMp4
-    videoWebm
-    videoPoster
-  }
-  page {
-    heroTitle
-    heroBody
-    aboutTitle
-    aboutBody
-    instagramHandle
-    teamMembers
-  }
-  allLogos(orderBy: position_ASC) {
-    id
-    name
-    image { url alt width height }
-    displayHeight
-  }
-}`);
-
-const { allProjects: projects, page, allLogos: logos } = data;
-const teamMembers = (
-  typeof page.teamMembers === "string"
-    ? JSON.parse(page.teamMembers || "[]")
-    : page.teamMembers ?? []
-) as Array<{
-  name: string;
-  email: string;
-  phone: string;
-  phoneHref: string;
-  image: string;
-}>;
+const projects = projectsData.projects;
+const page = pageData;
+const logos = logosData.logos;
+const teamMembers = page.teamMembers;
 ---
 
 <Layout
@@ -96,9 +57,9 @@ const teamMembers = (
           {projects.map((project) => (
             <ProjectCard
               title={project.title}
-              meta={project.projectMeta}
+              meta={project.meta}
               description={project.description}
-              image={project.thumbnail.url}
+              image={`/images/${project.image}`}
               blurThumbnail={project.blurThumbnail}
               videoMp4={project.videoMp4 ? `/videos/${project.videoMp4}` : undefined}
               videoWebm={project.videoWebm ? `/videos/${project.videoWebm}` : undefined}
@@ -153,11 +114,11 @@ const teamMembers = (
         <div class="logos-grid">
           {logos.map((logo) => (
             <img
-              src={logo.image.url}
+              src={`/images/${logo.image}`}
               alt={logo.name}
               class="logo-img"
               loading="lazy"
-              style={logo.displayHeight ? `height:${logo.displayHeight}px` : undefined}
+              style={logo.height ? `height:${logo.height}px` : undefined}
             />
           ))}
         </div>

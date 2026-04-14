@@ -20,6 +20,9 @@ pnpm-debug.log*
 # migration scripts (contain API tokens)
 scripts/
 
+# TinaCMS generated admin
+public/admin/
+
 # macOS-specific files
 .DS_Store
 
